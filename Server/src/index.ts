@@ -1,6 +1,6 @@
-import {config} from './config';
+import {config} from './config.js';
 import express,{Application, Request , Response} from 'express';
-import transformRoute from './routes/transformRoute';
+import transformRoute from './routes/transformRoute.js';
 
 const app: Application = express();
 

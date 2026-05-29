@@ -1,6 +1,6 @@
 import {Request,Response} from 'express';
 import { TransformRequest,TransformResponse } from '../types';
-import { transformText } from '../services/gemini';
+import { transformText } from '../services/gemini.js';
 import { TransformMode,ResultLength } from '../types';
 
 export const transformTextRes = async(req: Request<{},{},{text: string,mode: TransformMode,length: ResultLength}>, res: Response)=>{

@@ -1,4 +1,4 @@
-import { config } from "../config";
+import { config } from "../config.js";
 import {GoogleGenAI} from "@google/genai";
 import { TransformMode, ResultLength } from "../types";
 const apiKey = config.geminiApiKey;

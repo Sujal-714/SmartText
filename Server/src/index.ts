@@ -1,16 +1,17 @@
-import 'dotenv/config'; 
+import {config} from './config';
 import express,{Application, Request , Response} from 'express';
-import { log } from 'node:console';
+import transformRoute from './routes/transformRoute';
 
 const app: Application = express();
 
 //middleware
 
 app.use(express.json());
+app.use('/transform',transformRoute);
 
 //basic route
 
-const PORT = process.env.PORT;
+const PORT = config.PORT;
 
 app.get('/',(req: Request,res: Response)=>{
   res.send("Basic route: SmartText 👾");

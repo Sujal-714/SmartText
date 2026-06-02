@@ -12,7 +12,6 @@ app.use('/transform',transformRoute);
 //basic route
 
 const PORT = config.PORT;
-
 app.get('/',(req: Request,res: Response)=>{
   res.send("Basic route: SmartText 👾");
 });

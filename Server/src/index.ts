@@ -12,18 +12,17 @@ app.use('/transform',transformRoute);
 //basic route
 
 const PORT = config.PORT;
-
 app.get('/',(req: Request,res: Response)=>{
-  res.send("Basic route: SmartText 👾");
+  res.send('Basic route: SmartText 👾');
 });
 
 const startServer =  async () :Promise<void> => {
-    try{ 
+  try{ 
     app.listen(PORT, ()=>{
-        console.log(`Server running on http://localhost:${PORT}`);
-     });
-    }catch(err){
-     console.log('Failed to start Server');
-    }
-}
+      console.log(`Server running on http://localhost:${PORT}`);
+    });
+  }catch(err){
+    console.log('Failed to start Server',err);
+  }
+};
 startServer();

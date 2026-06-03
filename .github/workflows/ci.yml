@@ -121,7 +121,7 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha # use Github Actions cache
-          cache-to: type=gha,mode=max #save to Github Actions cache
+          cache-to: type=gha,mode=min #save to Github Actions cache
 
       
 

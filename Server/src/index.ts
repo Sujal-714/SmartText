@@ -9,7 +9,10 @@ const app: Application = express();
 
 app.use(express.json());
 app.use('/transform',transformRoute);
-
+app.use(cors({
+  origin: config.corsOrigin.split(','),
+  methods: ['GET','POST','DELETE'],
+}));
 //basic route
 
 const PORT = config.PORT;

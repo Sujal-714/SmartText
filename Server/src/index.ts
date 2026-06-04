@@ -1,6 +1,7 @@
 import {config} from './config.js';
 import express,{Application, Request , Response} from 'express';
 import transformRoute from './routes/transformRoute.js';
+import cors from 'cors';
 
 const app: Application = express();
 

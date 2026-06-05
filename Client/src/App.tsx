@@ -10,16 +10,17 @@ function App(){
   const [text,setText]=useState('');
   const [mode,setMode]=useState<TransformMode>('summarize');
   const [length,setLength]=useState<ResultLength>('bullet');
-  const [result,setResult]=useState<TransformResponse>({
-    result: "",
-  });
+  const [result,setResult]=useState<TransformResponse | null>(null);
   const [loading,setLoading]=useState(false);
 
   async function handleTransfrom(){
     setLoading(true);
+    try{
     const data: TransformResponse = await transformText(text,mode,length);
     setResult(data);
-     setLoading(true);
+    }finally{
+     setLoading(false);
+    }
   
   }
 

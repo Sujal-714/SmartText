@@ -6,13 +6,13 @@ import cors from 'cors';
 const app: Application = express();
 
 //middleware
-
-app.use(express.json());
-app.use('/transform',transformRoute);
 app.use(cors({
   origin: config.corsOrigin.split(','),
   methods: ['GET','POST','DELETE'],
 }));
+app.use(express.json());
+app.use('/transform',transformRoute);
+
 //basic route
 
 const PORT = config.PORT;

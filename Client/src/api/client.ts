@@ -12,8 +12,8 @@ export async function transformText(Text: string, Mode: TransformMode, Length: R
     if(!response.ok){
         throw new Error(`Request failed: ${response.status}`);
     }
-    const data = response.json();
+    const data =await response.json();
     console.log(data);
-    return data;
+    return data.response;
 
 }
